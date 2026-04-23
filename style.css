@@ -1,4 +1,3 @@
-/* 1. Global Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,7 +13,6 @@ body {
     background-color: #ebebeb;
 }
 
-/* 2. Card Layout */
 .card {
     width: 370px;
     background: #ffffff;
@@ -43,7 +41,6 @@ body {
     margin-bottom: 24px;
 }
 
-/* 3. Controls & Sorting */
 .controls {
     width: 100%;
     display: flex;
@@ -62,11 +59,10 @@ body {
     fill: #000000;
 }
 
-/* 4. Input & Add Button */
 .input-wrapper {
     position: relative;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .task-input {
@@ -80,7 +76,7 @@ body {
 
 .add-btn {
     position: relative;
-    background-color: #833AE0;
+    background-color: #9953F1;
     color: #ffffff;
     border: none;
     border-radius: 30px;
@@ -104,7 +100,7 @@ body {
     top: 0;
     width: 48px;
     height: 48px;
-    background-color: #9953F1;
+    background-color: #AA68FE;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -117,7 +113,6 @@ body {
     margin-left: 24px;
 }
 
-/* 5. Task List Styles */
 .task-list {
     width: 100%;
     margin-bottom: 20px;
@@ -144,6 +139,11 @@ body {
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    display: none;
+}
+
+.save-icon {
+    display: none;
 }
 
 .task-actions {
@@ -151,35 +151,26 @@ body {
     gap: 10px;
 }
 
-/* İkonların ilkin vəziyyəti */
-.edit-icon, 
-.save-icon, 
-.delete-icon {
-    cursor: pointer;
-    display: block; /* İkonların blok kimi davranmasını təmin et */
-}
 
-/* Hidden klası - ən güclü qayda */
+
 .hidden {
     display: none !important;
 }
 
-.edit-icon:hover, 
+.edit-icon:hover,
 .save-icon:hover {
     filter: brightness(0) saturate(100%) invert(43%) sepia(85%) saturate(2250%) hue-rotate(248deg) brightness(95%) contrast(98%);
 }
 
-/* 7. Delete Icon (Xüsusi vəziyyət) */
+
 .delete-icon:hover rect {
     fill: #9953F1;
-    stroke: #9953F1;
 }
 
 .delete-icon:hover path {
     stroke: #FFFFFF;
 }
 
-/* 8. Clear Button (Inputun içindəki) */
 .clear-btn {
     cursor: pointer;
     background: transparent;
@@ -196,9 +187,18 @@ body {
 
 .clear-btn:hover svg circle {
     fill: #9953F1;
-    stroke: #9953F1;
 }
 
 .clear-btn:hover svg path {
     stroke: #FFFFFF;
+}
+
+.task-item.editing .task-text,
+.task-item.editing .edit-icon {
+    display: none;
+}
+
+.task-item.editing .edit-task-input,
+.task-item.editing .save-icon {
+    display: block;
 }

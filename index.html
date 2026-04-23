@@ -41,30 +41,6 @@
 
             </div>
 
-            <div id="task-list" class="task-list"></div>
-            <template id="task-row">
-                <li class="task-item">
-                    <span class="task-text"></span>
-                    <input type="text" class="edit-task-input hidden">
-
-                    <div class="task-actions">
-                        <img class="edit-icon"
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAcQAAAHEBHD+AdwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEESURBVDiNldO/LuxRFMXxz5KJRqFSKCU6IUIp0XoGkXgBDUFHoldQ6XQ6iUqlcm8iOh5AoUGp9C83dysQMn4zmVnJKU72/q61T7KPqtLPwRL+4BAjqSpJJjHrWw9VdaZNSVaxginMYznYwRguf/TeVdVpAzyHexTWcQFXPYy9imO0Pu97uMbmAAbaR+2QvFhV/36Uzqtqt284yR5U1Zpu6b3AHQ2SrPQCNxokCTYwhFY32FdDm2bw18eynCS5wf8muNMTFvCECUzjuQlOspVktGmCJ7zgDFtV9dyUjHEM/zKoqv0OQKO67kGvBo9JRvqBkgz6+D+3LWzjKMlwHx5vOKiq13cd46KPLEvGfQAAAABJRU5ErkJggg=="
-                            width="20" height="20" alt="Edit">
-
-                        <img class="save-icon hidden"
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAApgAAAKYB3X3/OAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFoSURBVEiJvZYxbsJAEEXfWka5AQV9ZFEDNQchouMYHIIzcAOa3CFAnSI1LoKEaCIUmknhv8pqWcdYwhlptNJ45s/4e2bWzsyoE+dcH5gAY2CkE2AH7HVuzeyzFsTMbhTIgSVwBSzQszS0XeWbJ7ES4EPgTcEnYAW8AAXgpIVsK/mYYoZ/JgDmwEUBr8AgVVUUM5CvKXaeTKDKL8AXsGgCTiRaKPYSvknIuaelNXiUxNOVhwmWnpYGgHlMQcLH07X0HdpXJ5yaOAeOwPGOb3ISZj9Tn/eAtZmVtf1cSU9aK8JYy2+S8Ts82wbwNuKxxhnVhHaVYARQUk2ni7iccTvJKb0CsyjWCbPM/6iiBN6Bp8D2rPMjsH3Lt1Y2qqS4o8/PwPkOv0KYm4xqK0LVTY8Sj7XPqFZuVwl20G7QDsChzaC1XRVTYNpqVfzLstPD7tZ1tC27uXCiN+nmygySPOzSdwJMyiN+W34AYJMOjcC5RBcAAAAASUVORK5CYII="
-                            width="20" height="20" alt="Save">
-
-                        <svg class="delete-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <rect x="0.5" y="0.5" width="19" height="19" rx="9.5" stroke="#C4C4C4" />
-                            <path d="M6 6L14 14" stroke="#C4C4C4" />
-                            <path d="M6 14L14 6" stroke="#C4C4C4" />
-                        </svg>
-                    </div>
-                </li>
-            </template>
-
             <div class="input-wrapper hidden">
                 <input type="text" class="task-input" />
                 <button class="clear-btn">
@@ -76,13 +52,16 @@
                     </svg>
                 </button>
             </div>
+
+            <div id="task-list" class="task-list"></div>
+
+
             <button class="add-btn">
                 <span class="icon-plus">+</span>
                 <span class="btn-text">Add</span>
             </button>
         </div>
     </div>
-
 
 
 
