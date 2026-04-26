@@ -18,13 +18,13 @@ body {
     background: #ffffff;
     border-radius: 10px;
     border: 1px solid #C4C4C4;
-    overflow: hidden;
 }
 
 .card-header {
     background-color: #E5A52F;
     height: 32px;
     width: 100%;
+    border-radius: 10px 10px 0 0;
 }
 
 .card-body {
@@ -41,11 +41,11 @@ body {
     margin-bottom: 24px;
 }
 
-.controls {
+.sort-wrapper {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .sort-icon {
@@ -97,7 +97,6 @@ body {
 .icon-plus {
     position: absolute;
     left: 0;
-    top: 0;
     width: 48px;
     height: 48px;
     background-color: #AA68FE;
@@ -116,18 +115,20 @@ body {
 .task-list {
     width: 100%;
     margin-bottom: 20px;
+    border: 1px solid #d1d5db;
+    padding: 8px 15px 8px 15px;
+    border-radius: 8px;
 }
 
 .task-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    justify-content: space-between;
     padding: 10px 0;
     gap: 10px;
 }
 
 .task-text {
-    flex: 1;
     word-break: break-all;
     font-size: 16px;
     color: #333;
@@ -151,15 +152,14 @@ body {
     gap: 10px;
 }
 
-
-
 .hidden {
     display: none !important;
 }
 
-.edit-icon:hover,
-.save-icon:hover {
+.edit-icon:hover rect,
+.save-icon:hover rect {
     filter: brightness(0) saturate(100%) invert(43%) sepia(85%) saturate(2250%) hue-rotate(248deg) brightness(95%) contrast(98%);
+
 }
 
 
@@ -179,7 +179,7 @@ body {
     position: absolute;
     right: 12px;
     top: 50%;
-    transform: translateY(-50%);
+    bottom: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
