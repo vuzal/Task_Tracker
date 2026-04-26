@@ -110,7 +110,7 @@ taskInput.addEventListener('keydown', (e) => {
 });
 
 function toggleSort(isAsc) {
-    tasks.sort((a, b) => isAsc ? a.localeCompare(b) : b.localeCompare(a));
+    tasks.sort((a, b) => isAsc ? b.localeCompare(a) : a.localeCompare(b));
     sortAsc.classList.toggle('hidden');
     sortDesc.classList.toggle('hidden');
     renderTasks();
