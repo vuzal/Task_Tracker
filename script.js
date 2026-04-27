@@ -101,7 +101,15 @@ function saveTask(taskItem, inputField, index) {
 
 function deleteTask(index) {
     tasks.splice(index, 1);
-    renderTasks();
+    
+    let allItems = taskList.querySelectorAll('.task-item');
+    allItems[index].remove();
+    
+    taskList.querySelectorAll('.task-text').forEach((el, i) => {
+        el.textContent = `${i + 1}. ${tasks[i]}`;
+    });
+    
+    checkEmptyTasks();
 }
 
 plusIcon.addEventListener('click', (e) => {
@@ -116,7 +124,12 @@ addBtn.addEventListener('click', () => {
         tasks.push(val);
         taskInput.value = "";
         inputWrapper.classList.add('hidden');
-        renderTasks();
+        
+        let newIndex = tasks.length - 1;
+        let li = createTaskElement(val, newIndex);
+        taskList.append(li);
+        
+        checkEmptyTasks(); 
     }
 });
 
