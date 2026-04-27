@@ -21,9 +21,9 @@ function checkEmptyTasks() {
         taskList.classList.remove('hidden');
     }
 }
+checkEmptyTasks();
 
-
-function renderTasks() {
+function updateTasks() {
     taskList.innerHTML = "";
     tasks.forEach((task, index) => {
         let li = createTaskElement(task, index);
@@ -32,7 +32,7 @@ function renderTasks() {
     checkEmptyTasks();
 }
 
-checkEmptyTasks();
+
 
 function createTaskElement(task, index) {
     let li = document.createElement('li');
@@ -94,21 +94,15 @@ function saveTask(taskItem, inputField, index) {
 
     if (value) {
         tasks[index] = value;
-        taskItem.querySelector('.task-text').textContent = `${index + 1}. ${value}`;
         taskItem.classList.remove('editing');
+        updateTasks();
     }
 }
 
 function deleteTask(index) {
     tasks.splice(index, 1);
-    
-    let allItems = taskList.querySelectorAll('.task-item');
-    allItems[index].remove();
-    
-    taskList.querySelectorAll('.task-text').forEach((el, i) => {
-        el.textContent = `${i + 1}. ${tasks[i]}`;
-    });
-    
+    updateTasks();
+
     checkEmptyTasks();
 }
 
@@ -124,12 +118,12 @@ addBtn.addEventListener('click', () => {
         tasks.push(val);
         taskInput.value = "";
         inputWrapper.classList.add('hidden');
-        
+
         let newIndex = tasks.length - 1;
         let li = createTaskElement(val, newIndex);
         taskList.append(li);
-        
-        checkEmptyTasks(); 
+
+        checkEmptyTasks();
     }
 });
 
@@ -138,7 +132,7 @@ taskInput.addEventListener('keydown', (e) => {
         tasks.push(taskInput.value.trim());
         taskInput.value = "";
         inputWrapper.classList.add('hidden');
-        renderTasks();
+        updateTasks();
     }
 });
 
@@ -146,7 +140,7 @@ function toggleSort(isAsc) {
     tasks.sort((a, b) => isAsc ? b.localeCompare(a) : a.localeCompare(b));
     sortAsc.classList.toggle('hidden');
     sortDesc.classList.toggle('hidden');
-    renderTasks();
+    updateTasks();
 }
 
 sortAsc.addEventListener('click', () => toggleSort(true));
